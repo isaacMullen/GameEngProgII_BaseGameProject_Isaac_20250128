@@ -1,0 +1,3 @@
+Detect player at edge of screen
+
+Persist all objects i will continue to need

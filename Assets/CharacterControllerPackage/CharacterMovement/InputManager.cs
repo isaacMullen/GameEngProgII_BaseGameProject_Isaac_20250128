@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour, InputActions.IPlayerActions
     public InputActions inputActions;
 
     //Initializing, enabling and setting the callbacks to this class
-    void Start()
+    void Awake()
     {
         inputActions = new InputActions();
         inputActions.Player.SetCallbacks(this);

@@ -4,17 +4,14 @@ using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{
-    CharacterController characterController;
-
+{        
     public float speed;
     private Vector2 moveVector = Vector2.zero;
     private Rigidbody2D rb;
 
     //Accessing charController
     private void Start()
-    {
-        characterController = GetComponent<CharacterController>();
+    {                
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
