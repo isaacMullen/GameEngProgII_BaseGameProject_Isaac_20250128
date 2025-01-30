@@ -12,10 +12,8 @@ public class LevelManager : MonoBehaviour
     public PlayerController player;
     public Transform spawnPosition;
 
-    private void Update()
-    {
-        
-    }
+    private List<Scene> traversedScenes = new List<Scene>();
+    
 
     void OnEnable()
     {        
@@ -53,8 +51,19 @@ public class LevelManager : MonoBehaviour
     {
         gameManager.currentState = GameManager.GameState.LoadingLevel;
         Debug.Log($"Current State: {gameManager.currentState}");
+        
+        if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
+        {
+            currentSceneIndex += 1;
+            SceneManager.LoadScene(currentSceneIndex);
+        }
+        else
+        {
+            currentSceneIndex = 0;
+            SceneManager.LoadScene(currentSceneIndex);
+        }
 
-        SceneManager.LoadScene(currentSceneIndex + 1);        
+
     }     
     
     void HandlePlayerSpawn()
